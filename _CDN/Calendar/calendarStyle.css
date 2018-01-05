@@ -1,0 +1,65 @@
+
+div[id*='calendar'] {
+    position: relative;
+    margin-top: 45px;
+    margin-left: 15%;
+    float: left;
+}
+
+div[id*='calendar'] table,
+tr:first-child {
+    position: relative;
+    border: 2px solid #6A6A6A;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 15px 30px;
+    border: 1px solid #6A6A6A;
+    text-align: center;
+    background-color: #ecf2e8;
+}
+
+td:empty {
+    background-color: #fdfffc;
+}
+
+th {
+    padding: 10px;
+}
+
+.rows {
+    cursor: pointer;
+    user-select: none;
+}
+
+div[id*='calendar'].fullCalendar {
+    width: 90%;
+    height: 70%;
+    margin: 0 5%;
+}
+
+div[id*='calendar'].fullCalendar table{
+    width: 100%;
+}
+
+.task {
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #5b6d5c;
+    color: #494c49;
+    font-size: 13px;
+    padding: 0 20px 0 5px;
+}
+
+button.closeTask {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: #d58d7042;
+    color: #d91a1a;
+    padding: 0;
+}
