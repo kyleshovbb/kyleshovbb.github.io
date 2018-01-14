@@ -1,0 +1,29 @@
+#contain {
+    margin: 0 auto;
+    width: min-content;
+}
+
+table, td {
+    border: solid 1px black;
+    border-collapse: collapse;
+}
+td {
+    cursor: pointer;
+    padding: 35px;
+    background-color: #e2f2d0;
+}
+
+td:empty {
+    background-color: #8bc34a26;
+}
+
+#controls {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 25px;
+    width: max-content;
+}
+
+label {
+    display: block;
+}

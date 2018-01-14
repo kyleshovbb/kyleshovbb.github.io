@@ -68,6 +68,20 @@ body {
     height: 300px;
     border: 1px solid black;
     border-radius: 20px;
+    margin: 40px;
+}
+
+.card:before,
+.calendar:before,
+.yandexMap:before,
+.barleyBreak:before {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color: #fefffe99;
+    border-radius: 20px;
 }
 
 .card {
@@ -77,13 +91,28 @@ body {
 }
 
 .card:before {
-    position: absolute;
-    display: block;
-    content: " ";
-    width: 100%;
-    height: 100%;
     background-color: #fefffec9;
-    border-radius: 20px;
+}
+
+.calendar {
+    background: url(img/calendar.jpg);
+    background-repeat: no-repeat;
+    background-size: 97%;
+    background-position: 50% 27%;
+}
+
+.barleyBreak {
+    background: url(img/barleyBreak.jpg);
+    background-repeat: no-repeat;
+    background-size: 44%;
+    background-position: 50% 27%;
+}
+
+.yandexMap {
+    background: url(img/yandexMap.jpg);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: 50% 27%;
 }
 
 .links {
@@ -93,8 +122,6 @@ body {
     bottom: 20px;
     width: 30px;
     height: 30px;
-    border: 1px solid black;
-    border-radius: 5px;
 }
 
 .web {

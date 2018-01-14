@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Удобная программа для создания визиток - Мастер Визиток">
+    <meta name="keywords" content="Удобная программа для создания визиток - Мастер Визиток">
+
+    <title>Мастер визиток</title>
+    <link rel="shortcut icon" href="css/images/icons/favicon.gif" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700,700i" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+    <nav>
+        <ul class="navig text-center fixed-width">
+            <li><a class="wobble-top" href="index.html" title="Главная страница">Главная</a></li>
+            <li><a class="wobble-top" href="constructor.html" title="Конструктор визиток">Конструктор визиток</a></li>
+            <li><a class="wobble-top" href="samples.html" title="Примеры визиток">Образцы визиток</a></li>
+            <li><a class="wobble-top" href="article.html" title="Статьи">Обучение</a></li>
+            <li><a class="wobble-top" href="video.html" title="Видео уроки">Видео</a></li>
+        </ul>
+    </nav>
+    <!-- Модальное Окно -->
+    <div class="dm-overlay" id="win">
+        <div class="dm-modal">
+            <a href="#close" class="close">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+            <h2 class="h">По вашей теме найдено <span id="random"></span> шаблонов</h2>
+            <p class="p p1">Введите  e-mail и скачайте программу со встроенными шаблонами визиток</p>
+            <form>
+                <input type="text" placeholder="Email:" id="email">
+            </form>
+            <button class="header-buttom">
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                Скачать сейчас
+            </button>
+            <p class="p p2">БЕСПЛАТНАЯ пробная версия</p>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1 class="h">Готовые шаблоны визиток</h1>
+        <p class="p header-text">Создавайте визитки своими руками</p>
+        <p class="p position-right">Легко и быстро делайте личные, корпоративные визитки и бейджи</p>
+    </div>
+
+    <div class="header-catalog">
+        <ul class="text-center">
+            <li><i class="fa fa-check-circle" aria-hidden="true"></i>Общий каталог тематик</li>
+            <li><i class="fa fa-check-circle" aria-hidden="true"></i>Свыше 150 авторских шаблонов визиток</li>
+            <li><i class="fa fa-check-circle" aria-hidden="true"></i>Удобная печать</li>
+        </ul>
+        <button class="header-buttom">
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            Скачать сейчас
+        </button>
+        <div class="header-description">Программа для создания визиток, 150 + шаблонов в комплекте</div>
+    </div>
+
+    <div class="serch-content">
+        <h2 class="h fixed-width">Оригинальные шаблоны визиток для любого вида деятельности</h2>
+        <p class="find-card p">Найдите свою визитку</p>
+        <div class="serch-container">
+            <button class="icon">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <span class="icon-text">Найти визитку</span>
+            </button>
+            <input type="text" placeholder="Введите тему визитки:" id="serch">
+        </div>
+        <p class="or-find p">Или выберите из предложенных</p>
+        <div class="button fixed-width">
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Врачи</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Дизайн</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Строительство</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Туризм</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Недвижимость</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Фотограф</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Автоуслуги</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Парикмахер</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Техника</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Юридические услуги</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Детские</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Развлечения</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Питание</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Фитнес</a>
+            <a href="#win" onclick="generateRandomText()" class="hover-shadow">Одежда</a>
+        </div>
+    </div>
+
+    <div class="advantages-content">
+        <h2 class="h fixed-width">Преимущества использования программы со встроенной коллекцией шаблонов</h2>
+        <div class="screen slider">
+            <div class="bd">
+                <ul>
+                    <li><a class="a" title="Каталог шаблонов"><img src="css/images/slide1.jpg" /></a></li>
+                    <li><a class="a" title="Рабочая область программы"><img src="css/images/slide2.jpg" /></a></li>
+                    <li><a class="a" title="Быстрое создание визиток"><img src="css/images/slide3.jpg" /></a></li>
+                    <li><a class="a" title="Выбор логотипа для визитки"><img src="css/images/slide4.jpg" /></a></li>
+                    <li><a class="a" title="Изменение цвета и шрифта"><img src="css/images/slide5.jpg" /></a></li>
+                </ul>
+            </div>
+            <div class="hd">
+                <ul>
+                </ul>
+            </div>
+            <div class="pnBtn prev">
+                <span class="blackBg"></span>
+                <a class="arrow a" href="javascript:void(0)"></a>
+            </div>
+            <div class="pnBtn next">
+                <span class="blackBg"></span>
+                <a class="arrow a" href="javascript:void(0)"></a>
+            </div>
+        </div>
+        <p class="advantages-text p fixed-width">Удобная программа для быстрого создания визиток и бейджей. Включает более 150 готовых вариантов
+            дизайна визитных карточек на самые разные темы, а также возможность создания собственных
+            оригинальных стилей. Для подготовки красивой визитки достаточно ввести контактные данные,
+            выбрать шаблон и отредактировать макет по своему вкусу.</p>
+    </div>
+
+    <div class="indormation-content">
+        <div class="line fixed-width">
+            <div class="indormation-block1 indormation-block">
+                <h3 class="h">Более 150 готовых
+                авторских шаблонов</h3>
+                <p>Приложение содержит более 150 готовых шаблонов визиток самой разнообразной тематики.
+                    При этом вы вправе самостоятельно продумывать дизайн каждой визитки на основе уже имеющихся
+                    композиций. В зависимости от запроса вы можете выбрать подходящий шаблон в следующих категориях:
+                    автомобили, красота, компьютеры, строительство, медицина, недвижимость, туризм, универсальные и
+                    прочие.
+                </p>
+            </div>
+            <div class="indormation-block2 indormation-block">
+                <h3 class="h">Создание визитки
+                    за 3 минуты!</h3>
+                <p>С помощью редактора «Мастер визиток» вы можете своими руками сделать качественные бейджи для себя и
+                    сотрудников вашей фирмы. Утилита предлагает свыше ста шаблонов оформления, а также множество опций
+                    для создания собственного оригинального дизайна. Такие функции как выбор фона и добавление
+                    изображений помогут вам подготовить презентабельные бейджи для вашей организации.
+                </p>
+            </div>
+            <div class="indormation-block3 indormation-block">
+                <h3 class="h">Встроенная коллекция
+                    элементов дизайна</h3>
+                <p>Визитки – неотъемлемый атрибут делового общения. Их можно положить в карман кошелька, а в нужное
+                    время протянуть интересующему нас человеку. В программе «Мастер визиток» вы можете изготовить
+                    визитные карточки на любой вкус: контактные, корпоративные, рекламные, бейджи. Утилита позволит
+                    легко подобрать необходимый формат и стиль, оставляя за вами право на корректировку деталей.
+                </p>
+            </div>
+        </div>
+        <div class="line line2 fixed-width">
+            <div class="indormation-block4 indormation-block">
+                <h3 class="h">Клиентская база данных
+                    в комплекте</h3>
+                <p>Компактная клиентская база программы хранит все данные о компаниях, сотрудниках, а также частных
+                    специалистах, с которыми вам приходилось иметь дело при создании визиток. Поиск записей и загрузка
+                    данных в любой шаблон осуществляются буквально за пару кликов. Помимо этого, доступно большое число
+                    полей контактных данных. Благодаря базе вам не придется вбивать большое количество информации
+                    заново.
+                </p>
+            </div>
+            <div class="indormation-block5 indormation-block">
+                <h3 class="h">Сохранение макетов в
+                    любом формате!</h3>
+                <p>В "Мастере Визиток" доступно сохранение макетов в форматах PDF, BMP, TIFF, а также в JPEG
+                    различного качества. Вы можете выбрать оптимальное разрешение - 300 или 600 dpi и распечатать
+                    готовые визитки на струйном или лазерном принтере. Кроме этого, возможна двухсторонняя печать
+                    визиток. Редактор оснащен понятным интерфейсом, и отлично подходит для использования как в
+                    домашних условиях, так и в профессиональном салоне.
+                </p>
+            </div>
+            <div class="indormation-block6 indormation-block">
+                <h3 class="h">Отправка на печать
+                    в один клик!</h3>
+                <p>Программа поддерживает распечатку созданных визиток на листах любого формата
+                    (А3, А4, А5, А6, 10х15 и др.) Продукт автоматически располагает визитки на бумаге, исходя из
+                    выбранного формата, а также позволяет настроить размер полей, маркеры обрезки и другие параметры.
+                    Функция "Выпуск под обрез" обеспечивает качественную печать визиток в типографиях.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="img-card">
+        <h2 class="h fixed-width">Создайте собственные визитки на базе существующих шаблонов</h2>
+        <div class="line fixed-width">
+            <div class="model-block1">
+                <ul class="back-card">
+                    <li>
+                        <figure>
+                            <img class="icon" src="css/images/img2.jpg" alt="Пример визитки №1"/>
+                            <figcaption>
+                                <h2 class="h">Перейти в конструктор визиток</h2>
+                                <p class="p">В конструкторе визиток вы найдёте более подробную информацию о процессе создания визиток</p>
+                                <a href="constructor.html">Подробнее</a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <button>Скачать визитку</button>
+            </div>
+            <div class="model-block2">
+                <ul class="back-card">
+                    <li>
+                        <figure>
+                            <img class="icon" src="css/images/img1.jpg" alt="Пример визитки №1"/>
+                            <figcaption>
+                                <h2 class="h">Перейти в конструктор визиток</h2>
+                                <p class="p">В конструкторе визиток вы найдёте более подробную информацию о процессе создания визиток</p>
+                                <a href="constructor.html">Подробнее</a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <button>Скачать визитку</button>
+            </div>
+            <div class="model-block3">
+                <ul class="back-card">
+                    <li>
+                        <figure>
+                            <img class="icon" src="css/images/img3.jpg" alt="Пример визитки №1"/>
+                            <figcaption>
+                                <h2 class="h">Перейти в конструктор визиток</h2>
+                                <p class="p">В конструкторе визиток вы найдёте более подробную информацию о процессе создания визиток</p>
+                                <a href="constructor.html">Подробнее</a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <button>Скачать визитку</button>
+            </div>
+        </div>
+        <div class="line line2 fixed-width">
+            <div class="model-block4">
+                <ul class="back-card">
+                    <li>
+                        <figure>
+                            <img class="icon" src="css/images/img4.jpg" alt="Пример визитки №1"/>
+                            <figcaption>
+                                <h2 class="h">Перейти в конструктор визиток</h2>
+                                <p class="p">В конструкторе визиток вы найдёте более подробную информацию о процессе создания визиток</p>
+                                <a href="constructor.html">Подробнее</a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <button>Скачать визитку</button>
+            </div>
+            <div class="model-block5">
+                <ul class="back-card">
+                    <li>
+                        <figure>
+                            <img class="icon" src="css/images/img5.jpg" alt="Пример визитки №1"/>
+                            <figcaption>
+                                <h2 class="h">Перейти в конструктор визиток</h2>
+                                <p class="p">В конструкторе визиток вы найдёте более подробную информацию о процессе создания визиток</p>
+                                <a href="constructor.html">Подробнее</a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <button>Скачать визитку</button>
+            </div>
+            <div class="model-block6">
+                <ul class="back-card">
+                    <li>
+                        <figure>
+                            <img class="icon" src="css/images/img6.jpg" alt="Пример визитки №1"/>
+                            <figcaption>
+                                <h2 class="h">Перейти в конструктор визиток</h2>
+                                <p class="p">В конструкторе визиток вы найдёте более подробную информацию о процессе создания визиток</p>
+                                <a href="constructor.html">Подробнее</a>
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <button>Скачать визитку</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="select-card">
+        <h2 class="h fixed-width">Выберете свою визитку</h2>
+        <p class="p fixed-width">Из более 150 встроенных шаблонов</p>
+        <hr class="fixed-width">
+        <div class="line fixed-width">
+            <a href="#win" class="curl-top-right">
+                <i class="fa fa-car" aria-hidden="true"></i>
+                <div class="text-buttom">Автомобили</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-female" aria-hidden="true"></i>
+                <div class="text-buttom">Красота, стиль</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-laptop" aria-hidden="true"></i>
+                <div class="text-buttom">Компьютеры</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-plug" aria-hidden="true"></i>
+                <div class="text-buttom">Строительство</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                <div class="text-buttom">Образование</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-cutlery" aria-hidden="true"></i>
+                <div class="text-buttom">Продукты</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <div class="text-buttom"> Государство</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>
+                <div class="text-buttom">Медицина</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <div class="text-buttom">Визитки с фото</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-building-o" aria-hidden="true"></i>
+                <div class="text-buttom">Недвижимость</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <div class="text-buttom">Спорт</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                <div class="text-buttom">Техника</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                <div class="text-buttom">Туризм</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <div class="text-buttom">Фото и видео</div>
+            </a>
+            <a href="#win" onclick="generateRandomText()" class="curl-top-right">
+                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                <div class="text-buttom">Универсальная</div>
+            </a>
+        </div>
+        <div class="pointer fixed-width"></div>
+    </div>
+
+    <div class="footer">
+        <h2 class="h fixed-width">Оригинальные шаблоны визиток для любого вида деятельности</h2>
+        <button class="header-buttom">
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            Скачать сейчас
+        </button>
+        <p class="p fixed-width">Поддержка Windows 7,8,10, ХР, Vista</p>
+    </div>
+
+    <div id="toTop">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </div>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/superslide.2.1.js"></script>
+    <script type="text/javascript" src="js/toTop.js"></script>
+
+    <script type="text/javascript">
+        jQuery(".slider .bd li").first().before( jQuery(".slider .bd li").last() );
+        jQuery(".slider").hover(function(){
+            jQuery(this).find(".arrow").stop(true,true).fadeIn(300)
+        },function(){
+            jQuery(this).find(".arrow").fadeOut(300) });
+        jQuery(".slider").slide(
+            { titCell:".hd ul", mainCell:".bd ul", effect:"leftLoop",autoPlay:true, vis:3,autoPage:true, trigger:"click"}
+        );
+    </script>
+
+    <script>// рандомное формирование чисел для модального окна
+
+        function generateRandomText() {
+            var randomText = getRandomInt(6, 25);
+
+            document.getElementById('random').innerHTML = randomText;
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</body>
+</html>

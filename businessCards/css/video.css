@@ -1,0 +1,109 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.video-header {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.video-header > p {
+    font-style: italic;
+    margin-top: 0.7143rem;
+    margin-bottom: 4.286rem;
+    font-size: 1.143rem;
+}
+
+.video-content {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    background-color: #F7FAFB;
+}
+
+.video-content > .block {
+    position: relative;
+    padding: 0 5.714rem;
+}
+
+.video-content > .block > h3 {
+    position: relative;
+    margin-top: 4.286rem;
+    margin-bottom: 2.143rem;
+    text-transform: inherit;
+    font-size: 1.714rem;
+}
+
+.video-content > .block2 > h3,
+.video-content > .block3 > h3 {
+    margin-top: 3.571rem;
+}
+
+.video-content > .block > h3 > .fa-play-circle {
+    margin-right: 0.7143rem;
+    vertical-align: -7%;
+    font-size: 1.714rem;
+    color: rgb(0, 187, 211);
+}
+
+.video-content > .block > p {
+    position: relative;
+    text-align: justify;
+    padding: 2.143rem 0;
+    font-size: 1rem;
+    border-bottom: 0.07143rem dotted #868686;
+}
+
+.video-content > .block3 > p {
+    margin-bottom: 3.929rem;
+    border-bottom: none;
+}
+
+.video-content > .block > iframe {
+    width: 100%;
+    height: 31.79rem;
+}

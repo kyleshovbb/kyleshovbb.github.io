@@ -1,0 +1,241 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+.body {
+    width: 100%;
+    background-color: #F7FAFB;
+}
+
+.header-constructor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    background-image: url(images/fon2.jpg); /* Путь к фоновому изображению */
+    background-repeat: no-repeat;
+    background-position: 49% 96%;
+    background-size: 71.43rem; /* Современные браузеры */
+}
+
+.header-constructor > h1:before {
+    left: 47.5%;
+}
+
+.header-constructor > .header-text1 {
+    position: relative;
+    margin-top: 0.7143rem;
+    font-size: 1.286rem;
+}
+
+.header-constructor > .email {
+    margin-top: 2.857rem;
+    color: #2F2F2F;
+    font-weight: inherit;
+    font-size: 1.143rem;
+}
+
+.header-constructor > .email-input > input {
+    position: relative;
+    margin-top: 0.7143rem;
+    padding: 1.429rem;
+    border: 0.1429rem solid #acc4d0;
+    border-radius: 0.3571rem;
+    height: 4.286rem;
+    width: 38.57rem;
+    color: #7d7d7d;
+    font-size: 1.143rem;
+    outline: none;
+}
+
+.header-constructor > .header-buttom {
+    margin-top: 2.5rem;
+}
+
+.header-constructor > .header-text3 {
+    position: relative;
+    margin-top: 1.429rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    font-size: 0.9286rem;
+    color: #666666;
+}
+
+.constructor-content {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5.357rem;
+}
+
+.constructor-content > h2 {
+    text-transform: inherit;
+    margin-top: 2.5rem;
+    font-size: 1.714rem;
+}
+
+.constructor-content > h3 {
+    text-transform: inherit;
+    margin-top: 3.571rem;
+    font-size: 1.429rem;
+    margin-bottom: 1.786rem;
+}
+
+.constructor-content > p {
+    text-align: justify;
+    font-size: 1.071rem;
+    margin-top: 1.786rem;
+}
+
+.constructor-content > p > img {
+    position: relative;
+    width: 30.71rem;
+    height: 17.5rem;
+    margin: 0.3571rem 3.571rem 2.143rem 0;
+    float: left;
+}
+
+.constructor-content > p > .img2 {
+    margin: 0.3571rem 0 2.143rem 3.571rem;
+    float: right;
+}
+
+.how-work > h2 {
+    color: white;
+    margin-bottom: 2.5rem;
+}
+
+.how-work > div > .block {
+    position: relative;
+    display: inline-flex;
+    width: 21.43rem;
+    height: 8.571rem;
+    border: 0.07143rem solid #4D7286;
+    border-radius: 0.3571rem;
+    margin: 1.429rem  0.3571rem 0 0.3571rem;
+}
+
+.how-work > div > .block > .fa {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 1.786rem;
+    font-size: 2.143rem;
+    color: rgb(252, 193, 3);
+}
+
+.how-work > div > .block > p {
+    position: relative;
+    text-align: left;
+    margin-left: 5.2rem;
+    font-size: 1.143rem;
+    color: white;
+    top: 50%;
+    transform: translateY(-19%);
+    z-index: 3;
+}
+
+.how-work > div > .block > .text2,
+.how-work > div > .block > .text4 {
+    width: 7.857rem;
+}
+
+.how-work > div > .block > div {
+    position: absolute;
+    font-size: 5.143rem;
+    font-weight: bold;
+    color: #346179;
+    top: 50%;
+    right: 0;
+    transform: translateY(-19%);
+    z-index: 2;
+}
+
+.how-work > div > .block1:after,
+.how-work > div > .block2:after,
+.how-work > div > .block4:after {
+    display: block;
+    content: "";
+    position: absolute;
+    background-color: #375267;
+    transform: rotate(45deg);
+    border: 0.07143rem solid #4D7286;
+    border-left: none;
+    border-bottom: none;
+    width: 1.071rem;
+    height: 1.071rem;
+    right: -2.8%;
+    top: 42%;
+}
+
+.how-work > .header-buttom {
+    margin-top: 4.286rem;
+    margin-bottom: 4.286rem;
+}
+
+.how-work > .header-buttom > .fa-cogs {
+    margin-right: 1rem;
+    vertical-align: -0.3rem;
+    font-size: 2.143rem;
+    color: white;
+    text-align: left;
+    text-shadow: 0 -0.07143rem 0 rgba(0, 0, 0, 0.4);
+}
+
+.constructor-content2 {
+    display: inline-block;
+    text-align: center;
+    margin-top: 4.286rem;
+    margin-bottom: 4.286rem;
+}
+
+.constructor-content2 > p {
+    display: inline-block;
+    text-align: justify;
+    margin-top: 1.429rem;
+    margin-bottom: 1.429rem;
+    font-size: 1rem;
+}

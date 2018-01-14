@@ -1,0 +1,290 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.article-header {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background-image: url(images/fon3.jpg); /* Путь к фоновому изображению */
+    background-repeat:no-repeat;
+    background-size: 46.43rem; /* Современные браузеры */
+    background-position: 15% -2.5rem;
+    background-color: #F7FAFB;
+}
+
+.article-header > .serch-card {
+    margin-top: 6.786rem;
+    background-image: url(images/icons/icon30.png); /* Путь к фоновому изображению */
+    background-repeat:no-repeat;
+    background-size: 10%; /* Современные браузеры */
+    background-position: 93% -7px;
+}
+
+.article-header > .serch-card > p {
+    top: 0;
+    font-weight: lighter;
+}
+
+.article-header > .serch-card > .p1 {
+    font-size: 2.571rem;
+}
+
+.article-header > .serch-card > .p2 {
+    font-size: 1.714rem;
+}
+
+.article-header > .header-buttom {
+    margin-top: 3.929rem;
+}
+
+.article-header > .header-text3 {
+    position: relative;
+    margin-top: 1.429rem;
+    margin-bottom: 4.286rem;
+    width: 100%;
+    font-size: 0.9286rem;
+    color: #666666;
+}
+
+.article-content {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    padding-bottom: 5.357rem;
+    border-bottom: 0.07143rem solid #00BCD5;
+}
+
+.article-content:after {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: -1.5%;
+    right: 48.7%;
+    width: 1.429rem;
+    height: 1.429rem;
+    border: 0.07143rem solid #00BCD5;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+    background-color: white;
+    z-index: 2;
+}
+
+.article-content > h2 {
+    margin-bottom: 3.929rem;
+}
+
+.article-content > p {
+    position: relative;
+    font-size: 1rem;
+    text-align: justify;
+    margin-top: 1.786rem;
+}
+
+.article-content > .quote {
+    font-style: italic;
+    border-radius: 0.3571rem;
+    padding: 4.143rem 2.143rem;
+    background-color: #E7EFF3;
+}
+
+.article-content > .quote > .fa-quote-right {
+    position: absolute;
+    top: 13%;
+    right: 48.7%;
+    font-size: 2.143rem;
+    color: rgba(201, 214, 214, 0.42);
+}
+
+.article-content2 {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 3.929rem;
+    background-color: #F7FAFB;
+}
+
+.article-content2 > .line {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3.571rem;
+    text-align: left;
+    font-size: 1.286rem;
+    color: #00BCD5;
+}
+
+.article-content2 > .line:after {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 50%;
+    bottom: 0;
+    height: 1.786rem;
+    width: 0.5714rem;
+    background-image: url(images/icons/icon33.png); /* Путь к фоновому изображению */
+    background-repeat:no-repeat;
+    background-size: 100%; /* Современные браузеры */
+}
+
+.article-content2 > .step3:after {
+    bottom: -1.786rem;
+}
+
+.article-content2 > .step3 {
+    border-bottom: 0.07143rem dotted #868686;
+}
+
+.article-content2 > .step3:before {
+    position: absolute;
+    display: block;
+    content: "";
+    margin-left: 0.3571rem;
+    bottom: -0.3571rem;
+    left: 49.3%;
+    width: 0.7143rem;
+    height: 0.7143rem;
+    border-radius: 50%;
+    background-color: #868686;
+    z-index: 3;
+}
+
+.article-content2 > .line > .step {
+    position: relative;
+    display: block;
+    text-align: left;
+    font-size: 1.286rem;
+    color: #00BCD5;
+}
+
+.article-content2 > .line > .step > .circle {
+    display: inline-block;
+    content: "";
+    margin-left: 0.3571rem;
+    width: 0.7143rem;
+    height: 0.7143rem;
+    border: 0.07143rem solid #E3E3E3;
+    border-radius: 50%;
+}
+
+.article-content2 > .line > .step > .circle-blue {
+    border: 0.07143rem solid #00BCD5;
+}
+
+.article-content2 > .line > h4 {
+    text-transform: inherit;
+    text-align: left;
+    font-size: 1.714rem;
+    margin-bottom: 1.071rem;
+}
+
+.article-content2 > .line > p {
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.article-content2 > .line > p > img {
+    position: relative;
+    float: left;
+    width: 30.71rem;
+    height: 15.71rem;
+    margin-top: 0.3571rem;
+    padding-right: 3.571rem;
+    padding-bottom: 0.7143rem;
+}
+
+.article-content2 > .line > p:before {
+    position: absolute;
+    display: block;
+    content: " ";
+    left: 0;
+    top: 0.3571rem;
+    height: 0.2143rem;
+    width: 7.857rem;
+    background-color: #00BCD5;
+    z-index: 2;
+}
+
+.article-content2 > h3 {
+    position: relative;
+    font-size: 1.714rem;
+    text-transform: inherit;
+    margin-top: 5rem;
+    margin-bottom: 2.143rem;
+}
+
+.article-content2 > .article-text4 {
+    font-size: 1rem;
+}
+
+.article-content2 > .img4 {
+    width: 35.71rem;
+    height: 100%;
+    margin: 3.571rem 0 5.714rem 0;
+}
+
+.article-download {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background-color: white;
+}
+
+.article-download > h2 {
+    font-size: 1.714rem;
+    text-transform: inherit;
+    margin-top: 3.571rem;
+}
+
+.article-download > p {
+    display: inline-block;
+    text-align: center;
+    font-size: 1rem;
+    margin: 2.143rem 0 5.357rem 0;
+}
