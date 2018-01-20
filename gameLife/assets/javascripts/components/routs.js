@@ -21,11 +21,10 @@ formControls.addEventListener("change", (ev) => {
 
     let target = ev.target;
     if (target.closest("#selectLine") || target.closest("#selectColumn")) {
-        lifeGame.playState = false;
-        lifeGame.buttons.removeEventListener('click', lifeGame.wrapperClickOnArray);
-        lifeGame.contain.removeEventListener('click', lifeGame.wrapperClickOnControlsButton);
-        lifeGame = {};
+        lifeGame.contain.removeEventListener('click', lifeGame.wrapperClickOnArray);
+        lifeGame.buttons.removeEventListener('click', lifeGame.wrapperClickOnControlsButton);
         lifeGame = new Controls(eventBus);
+        document.querySelector('#play').value = "Stop";
         eventBus.trigger('view', lifeGame);
     }
 });

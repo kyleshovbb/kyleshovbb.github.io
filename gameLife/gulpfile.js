@@ -46,7 +46,7 @@ gulp.task('js:build', function() {
         .pipe(source('min.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init())
-        /*.pipe(uglify())*/
+        .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./public/js/'))
         .pipe(reload({stream: true}));
