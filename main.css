@@ -74,7 +74,8 @@ body {
 .card:before,
 .calendar:before,
 .yandexMap:before,
-.barleyBreak:before {
+.barleyBreak:before,
+.gameLife:before{
     position: absolute;
     display: block;
     content: " ";
@@ -112,6 +113,13 @@ body {
     background: url(img/yandexMap.jpg);
     background-repeat: no-repeat;
     background-size: 90%;
+    background-position: 50% 27%;
+}
+
+.gameLife {
+    background: url(img/gameLife.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
     background-position: 50% 27%;
 }
 
