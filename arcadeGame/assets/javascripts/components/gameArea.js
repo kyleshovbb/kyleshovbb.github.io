@@ -1,4 +1,6 @@
 "use strict";
+import Person from "./person";
+
 class GameArea {
     constructor(contain, personage) {
         this.contain = contain;
@@ -75,13 +77,20 @@ class GameArea {
                 break;
             case "hunt2":
                 ctx.beginPath();
-                sprite = document.querySelector('#hunter2-img');
                 sWidth = 142.33;
                 sHeight = 95.75;
+                sprite = document.querySelector('#hunter2-img');
                 SUBJECT_SIZE = personage.SUBJECT_SIZE || this.arcadeGameContainer.height / 12;
                 ctx.drawImage(sprite, sx, sy, sWidth, sHeight, x, y, SUBJECT_SIZE, SUBJECT_SIZE);
                 ctx.arc(x + (SUBJECT_SIZE / 2), y + (SUBJECT_SIZE / 2), SUBJECT_SIZE * 2.5, 0, Math.PI * 2);
                 ctx.stroke();
+                break;
+            case "mushroom":
+                ctx.beginPath();
+                sWidth = 50;
+                sHeight = 50;
+                sprite = document.querySelector('#tinyshroommen-img');
+                ctx.drawImage(sprite, sx, sy, sWidth, sHeight, x, y, SUBJECT_SIZE, SUBJECT_SIZE);
                 break;
         }
     }
@@ -112,15 +121,17 @@ class GameArea {
     }
 
     addNewHunter() {
-        if (this.gameStage % 5 === 0) {
-            this.personage.push(new Person("hunt2", this.human));
-        } else this.personage.push(new Person("hunt1", this.human));
+        if (this.gameStage % 5 === 0) this.personage.push(new Person("hunt2", this.human));
+        else this.personage.push(new Person("hunt1", this.human));
+        if (this.gameStage % 10 === 0) this.personage.push(new Person("mushroom", this.human));
     }
 
     updateArea() {
         let timer = setInterval(() => {
             if (this.human.humanLife) {
+                this.removeDeadCharacters();
                 this.createCanvasArea();
+                this.checkMushroomTimer();
             } else if (!this.human.humanLife) {
                 clearInterval(timer);
                 this.gameOver();
@@ -135,9 +146,30 @@ class GameArea {
         }, 200)
     }
 
+    removeDeadCharacters() {
+        this.personage = this.personage.filter((character) => {
+            return character.die === false;
+        })
+    }
+
+    checkMushroomTimer(){
+        if (this.human.mushroomTimer > 0) {
+            let mushroomTimer = document.querySelector("#mushroomTimer");
+            if (!mushroomTimer) {
+                mushroomTimer = document.createElement("p");
+                mushroomTimer.setAttribute("id","mushroomTimer");
+                document.body.appendChild(mushroomTimer);
+            }
+            mushroomTimer.innerHTML = `Время действия волшебного гриба: ${this.human.mushroomTimer} секунд`;
+        } else {
+            let mushroomTimer = document.querySelector("#mushroomTimer");
+            if (mushroomTimer) mushroomTimer.remove();
+        }
+    }
+
     gameOver() {
-        let currentTiem = new Date();
-        let differenceInTime = currentTiem - this.timeToStart;
+        let currentItem = new Date();
+        let differenceInTime = currentItem - this.timeToStart;
         let overTime = new Date(differenceInTime);
         let minutes = overTime.getMinutes();
         let seconds = overTime.getSeconds();
@@ -159,6 +191,8 @@ class GameArea {
             localStorage["players"] = JSON.stringify(playersArray);
         }
 
-        this.contain.innerHTML = `Ваше время игры: ${minutes}:${seconds}`;
+        window.location.hash = `theEnd${playerName};${minutes + ":" + seconds}`;
     }
 }
+
+export default GameArea;

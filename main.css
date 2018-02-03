@@ -75,7 +75,8 @@ body {
 .calendar:before,
 .yandexMap:before,
 .barleyBreak:before,
-.gameLife:before{
+.gameLife:before,
+.arcadeGame:before{
     position: absolute;
     display: block;
     content: " ";
@@ -118,6 +119,13 @@ body {
 
 .gameLife {
     background: url(img/gameLife.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 27%;
+}
+
+.arcadeGame {
+    background: url(img/arcadeGame.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 50% 27%;

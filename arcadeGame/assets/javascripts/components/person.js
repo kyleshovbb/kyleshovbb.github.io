@@ -1,4 +1,7 @@
 "use strict";
+import EventBus from "../utilities/eventBus";
+import UpdateSprites from "./updatePersonageSprites";
+
 class Person {
     constructor(type,prey,x,y,direction) {
         this.prey = prey;
@@ -11,6 +14,7 @@ class Person {
         this.type = type;
         this.direction = direction;
         this.currentDirection = {};
+        this.die = false;
         this.eventBus = new EventBus();
         this.checkPersonType();
         this.moveInRandomDirection();
@@ -21,6 +25,8 @@ class Person {
             case "human":
                 this.subscribeToMove();
                 this.humanLife = true;
+                this.ateMushroom = false;
+                this.mushroomTimer = 0;
                 break;
             case "hunt1":
                 this.speed = this.getRandomInt(3, 10);
@@ -29,6 +35,10 @@ class Person {
             case "hunt2":
                 this.SUBJECT_SIZE = this.containerHeight / 12;
                 this.speed = this.getRandomInt(5, 12);
+                this.setRandomPositions();
+                break;
+            case "mushroom":
+                this.speed = this.getRandomInt(7, 14);
                 this.setRandomPositions();
                 break;
         }
@@ -42,16 +52,18 @@ class Person {
         if (c < this.SUBJECT_SIZE * 5) this.setRandomPositions();
     }
 
-    checkForCharacterOccurrencesInRadius() {
-        let c = this.getResultPythagoreanTheorem();
-        if (c < this.SUBJECT_SIZE * 2.7) {
-            this.pursueCharacter();
-        }
-    }
-
     subscribeToMove() {
         let wrapperMovePerson = this.movePerson.bind(this);
         document.body.addEventListener("keydown", wrapperMovePerson);
+        let wrapperMoveCharacterOnMobile = this.moveCharacterOnMobile.bind(this);
+        document.querySelector(".mobileControls").addEventListener("click",wrapperMoveCharacterOnMobile)
+    }
+
+    moveCharacterOnMobile(ev) {
+        let target = ev.target;
+        this.direction = +target.value;
+        this.updateSprites.direction = +target.value;
+        this.setDirection();
     }
 
     movePerson(event) {
@@ -124,14 +136,6 @@ class Person {
                 this.changeDirection();
                 this.eventBus.on("move", this.moveRightAndDown);
                 break;
-        }
-    }
-
-    catchUpWithThePlayer() {
-        let c = this.getResultPythagoreanTheorem();
-
-        if (c < this.SUBJECT_SIZE / 1.5) {
-            this.prey.humanLife = false;
         }
     }
 
@@ -240,13 +244,43 @@ class Person {
         }
     }
 
+    catchUpWithThePlayer() {
+        let c = this.getResultPythagoreanTheorem();
+
+        if (c < this.SUBJECT_SIZE / 1.5 && this.type === "mushroom" && !this.die) {
+            if (!this.prey.ateMushroom) this.playerCatchMushroom();
+            this.die = true;
+            this.prey.ateMushroom = true;
+            this.prey.mushroomTimer += 15;
+        }
+        else if (c < this.SUBJECT_SIZE / 1.5 && this.prey.ateMushroom) this.die = true;
+        else if (c < this.SUBJECT_SIZE / 1.5 && !this.die) this.prey.humanLife = false;
+    }
+
+    checkForCharacterOccurrencesInRadius() {
+        let c = this.getResultPythagoreanTheorem();
+        if (c < this.SUBJECT_SIZE * 2.7) {
+            this.pursueCharacter();
+        }
+    }
+
+    playerCatchMushroom() {
+        let time = setInterval(() => {
+            --this.prey.mushroomTimer;
+            if (this.prey.mushroomTimer <= 0) {
+                this.prey.ateMushroom = false;
+                clearInterval(time);
+            }
+        }, 1000)
+    }
+
     startMove() {
         let timer = setInterval(() => {
             this.checkOutTheEdgeOfTheCharacter();
             if (this.type === "hunt2") {
                 this.eventBus.trigger("move", this);
-                this.checkForCharacterOccurrencesInRadius();
                 this.catchUpWithThePlayer();
+                this.checkForCharacterOccurrencesInRadius();
             }
             else {
                 this.eventBus.trigger("move", this);
@@ -267,3 +301,5 @@ class Person {
         }
     }
 }
+
+export default Person;

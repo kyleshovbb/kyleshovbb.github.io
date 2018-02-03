@@ -1,7 +1,7 @@
 "use strict";
 class UpdateSprites {
 
-    constructor(type,direction,speed){
+    constructor(type, direction, speed) {
         this.direction = direction;
         this.speed = speed;
         this.type = type;
@@ -21,6 +21,9 @@ class UpdateSprites {
                 break;
             case "hunt2":
                 this.updateHunter2Sprite();
+                break;
+            case "mushroom":
+                this.updateMushroomSprite();
                 break;
         }
     }
@@ -94,13 +97,38 @@ class UpdateSprites {
         if (this.sx >= 425) this.sx = 0;
     }
 
+    updateMushroomSprite() {
+        switch (this.direction) {
+            case 1:
+            case 5:
+            case 6:
+                this.sy = 150;
+                break;
+            case 2:
+            case 7:
+            case 8:
+                this.sy = 0;
+                break;
+            case 3:
+                this.sy = 100;
+                break;
+            case 4:
+                this.sy = 50;
+                break;
+        }
+        this.sx += 50;
+        if (this.sx >= 140) this.sx = 0;
+    }
+
     startUpdateSprites() {
         this.timer = setInterval(() => {
             this.initUpdateSprites();
         }, this.speed * 18)
     }
 
-    stopUpdateSprites(){
+    stopUpdateSprites() {
         clearInterval(this.timer);
     }
 }
+
+export default UpdateSprites;
